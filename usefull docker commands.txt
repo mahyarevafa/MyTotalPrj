@@ -1,0 +1,31 @@
+Make the JAR:
+******************************************
+mvn clean package spring-boot:repackage
+
+
+RUN the JAR:
+******************************************
+D:\Java\jdk-17.0.3.1\bin\java -jar MyTotalPrj-0.0.1-SNAPSHOT.war
+
+
+
+Build and Run the Docker image:
+******************************************
+docker build -t myprj .
+
+docker run -p8080:8080 myprj
+
+docker run -p8080:8080 -p27017:27017 myprj
+
+
+
+docker image inspect myprj
+
+docker image rm myprj -f
+
+******************************************
+
+java -cp MyTotalPrj-v1.jar samples.springboot.SampleApplication
+D:\Java\jdk-17.0.3.1\bin\java -cp MyTotalPrj-v1.jar samples.springboot.SampleApplication
+
+
