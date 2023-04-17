@@ -1,4 +1,4 @@
-package samples.springboot;
+package samples.springboot.movies;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mongodb.MongoClient;
@@ -32,15 +33,15 @@ public class SampleController {
 		
 	}
 	
-    @GetMapping("/")
+    @GetMapping("/movies")
 	public String homePage() {
     	return "Welcome!<br/>"+
-    			"<a href=\"/movies\">Show Movies</a><br/>"+
+    			"<a href=\"/show-movies\">Show Movies</a><br/>"+
     			"<a href=\"/movie-entry\">Add a movie</a><br/>";
     			
 	}
 
-    @GetMapping("/movies")
+    @GetMapping("/show-movies")
 	public ArrayList<Movie> showMovies() {
     	
     	MongoCollection<Document> collection = getMongoMovieCollection(); 

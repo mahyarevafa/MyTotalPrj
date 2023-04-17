@@ -1,4 +1,4 @@
-package samples.springboot;
+package samples.springboot.movies;
 
 public class Movie {
 	private String title;
