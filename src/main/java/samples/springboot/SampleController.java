@@ -23,7 +23,8 @@ import com.mongodb.client.MongoDatabase;
 public class SampleController {
 
 	private MongoCollection<Document> getMongoMovieCollection(){
-		MongoClient mongo = new MongoClient( "host.docker.internal" , 27017 );
+		//MongoClient mongo = new MongoClient( "host.docker.internal" , 27017 );
+		MongoClient mongo = new MongoClient( "localhost" , 27017 );
 		
 		MongoDatabase database = mongo.getDatabase("mahyardb");
 		
